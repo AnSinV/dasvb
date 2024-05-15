@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  mysql:
+    ports:
+      - ":3306"
+    build:
+      context: ./
+    env_file:
+      - path: .env
+        required: true
+    networks:
+      - main_network
+
+networks:
+  main_network:
+        name: main_network 
+        external: true

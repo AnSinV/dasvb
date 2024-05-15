@@ -1,0 +1,7 @@
+Database/InitFiles
+Database/.env
+
+nginx/templates
+nginx/.env
+nginx/CA_bundle.crt
+nginx/server.key
