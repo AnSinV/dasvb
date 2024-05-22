@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   mysql:
     ports:
@@ -14,5 +12,5 @@ services:
 
 networks:
   main_network:
-        name: main_network 
-        external: true
+    name: main_network 
+    external: true

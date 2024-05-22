@@ -10,7 +10,7 @@ cd "./Database"
 call "./initDatabase.bat"
 
 echo Building database  image...
-docker-compose -f docker-compose.yml build
+docker-compose -f docker-compose.yml build -q
 echo Starting database  service...
 docker-compose -f docker-compose.yml up -d
 
@@ -22,7 +22,7 @@ cd "./AccountService"
 rem call "./prepareService.bat"
 
 echo Building AccountService images...
-docker-compose -f docker-compose.yml build
+docker-compose -f docker-compose.yml build -q
 
 echo Starting AccountService images...
 docker-compose -f docker-compose.yml up -d
@@ -35,7 +35,7 @@ cd "./nginx"
 call "./prepareNginx.bat"
 
 echo Building nginx image...
-docker-compose -f docker-compose.yml build
+docker-compose -f docker-compose.yml build -q
 echo Starting nginx service...
 docker-compose -f docker-compose.yml up -d
 

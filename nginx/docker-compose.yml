@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   web:
     build: ./
@@ -9,11 +7,15 @@ services:
       - "80:80"
       - "443:443"
     volumes:
+      - ./ssl-setup.conf:/etc/nginx/conf.d/ssl-setup.conf
       - ./templates/:/etc/nginx/templates
+      - ./CA_bundle.crt:/etc/ssl/certs/CA_bundle.crt
+      - ./dasvb.key:/etc/ssl/private/server.key
+      - ./ca.crt:/etc/ssl/certs/ca.crt
     networks:
       - main_network
 
 networks:
   main_network:
-        name: main_network 
-        external: true
+    name: main_network 
+    external: true
